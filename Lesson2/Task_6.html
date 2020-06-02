@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task_6</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		/**
+		 * [correctLastChar Функция подбирает нужный падеж валюты (рублей, рубль, рубля)]
+		 * @param  {[String/Number]} value [принимаемое значение может быть, как числовым так и строковым, но это обязательно должно быть число]
+		 * @return {[String]}       [Возвращает слово в нужном падеже]
+		 */
+		function correctLastChar(value) {
+			let z = value.charAt(value.length-1);
+			let a = value.charAt(value.length-2);
+
+			if (a == 1) {
+				return ('рублей');
+			} else {
+					switch(z) {
+						case '0':
+						case '5':
+						case '6':
+						case '7':
+						case '8':
+						case '9':
+							return ('рублей');
+						case '1':
+							return ('рубль');
+						case '2':
+						case '3':
+						case '4':
+							return ('рубля');
+				}
+			}
+		}
+
+
+		do {
+			// parseInt добавлено, чтобы при вводе пробела, пробел не преобразовывался в 0 и чтобы его мог увидет isNaN
+			let money = String(parseInt(prompt(`Введите сумму для вклада`)));
+
+			if(isNaN(money)) {
+				alert(`Введите сумму!`);
+			} else {
+				let moneyEndChar = correctLastChar(money);
+				alert(`Сумма вашего вклада составила ${money} ${moneyEndChar}`);
+			}
+
+		} while(confirm(`Повторить ввод?`));
+
+	</script>
+</body>
+</html>

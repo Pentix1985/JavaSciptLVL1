@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task_3</title>
+</head>
+<body>
+	<script>
+		'use strict';
+		do {
+			let a = Number(prompt(`Введите число №1`));
+			let b = Number(prompt(`Введите число №2`));
+
+			if(isNaN(a) || isNaN(b)) {
+				alert(`Вы ввели не числа!`);
+			} else if(a>=0 && b>=0) {
+				alert(`Разность равна ${a-b}`);
+			} else if(a<0 && b<0) {
+				alert(`Произведение равно ${a*b}`);
+			} else {
+				alert(`Сумма равна ${a+b}`);
+			}
+		}while(confirm(`Повторить?`));
+		
+	</script>
+</body>
+</html>

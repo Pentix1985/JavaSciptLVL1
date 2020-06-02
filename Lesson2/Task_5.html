@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task_5</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		function sum(num1,num2){
+			return (num1+num2);
+		}
+
+		let divide = (num1,num2) => (num1/num2);
+
+		let subtract = (num1,num2) => (num1-num2);
+
+		let multiply = (num1,num2) => (num1*num2);
+
+		/**
+		 * [mathOperation Функция производит арифметические операции сложения, вычитания, деления, умножения]
+		 * @param  {[Number]} arg1      [Первое вводимое число (число№1)]
+		 * @param  {[Number]} arg2      [Второе вводимое число (число№2)]
+		 * @param  {[Number]} operation [Выбор операции: 1 - сложение, 2 - деление, 3 - вычитание, 4 - умножение ]
+		 * @return {[Number]}           [Возвращает результат опеерации и выводит его на экран]
+		 */
+		function mathOperation(arg1, arg2, operation) {
+			switch (operation) {
+				case '1':
+					alert(sum(arg1,arg2));
+					break;
+				case '2':
+					alert(divide(arg1,arg2));
+					break;
+				case '3':
+					alert(subtract(arg1,arg2));
+					break;
+				case '4':
+					alert(multiply(arg1,arg2));
+					break;
+			}
+		}
+		do {
+			let number1 = Number(prompt(`Введите число №1`));
+			let number2 = Number(prompt(`Введите число №2`));
+			let operation = prompt(`Выбирите необходимую опеацию с числами: 1 - сложение, 2 - деление, 3 - вычитание, 4 - умножение`);
+
+			mathOperation(number1,number2,operation);
+		} while(confirm(`Повторить?`));
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task_1</title>
+</head>
+<body>
+	<script>
+		'use strict';
+		do {
+			let tempCel = Number(prompt(`Введите температуру в градусах цельсия`));
+
+			if (isNaN(tempCel)) {
+				alert(`Вы ввели не число!`);
+			} else {
+				let temFar = (9/5)*tempCel+32;
+				temFar = temFar.toFixed(1);
+				alert(`${tempCel} градусов цельсия равно ${temFar} градусам по фаренгейту`);
+			}
+		} while(confirm(`Повторить?`));
+
+	</script>
+</body>
+</html>
