@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FibIzvrashenie</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		/**
+		 * [fib2 Функция возвращает последнее число последователности Фибоначи]
+		 * @param  {[number]} n [Число последовательности]
+		 * @return {[number]}   [Возвращаемое число]
+		 */
+		function fib2(n) {
+  			if(n == 0){
+    			return [0, 1];
+  			}else{
+    			let [prev, next] = fib2(n - 1);
+    			return [next, prev + next];
+  			}
+		}
+
+		let fib = fib2(5)[0];
+
+		alert(fib);
+
+	</script>
+</body>
+</html>

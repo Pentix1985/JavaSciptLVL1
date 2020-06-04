@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task_8Fibonachi</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		/**
+		 * [fib Рекурсивная функция возвращает последнее число последователности чисел Фибоначи]
+		 * @param  {[number]} n [Число последовательности]
+		 * @return {[number]}   [Последнее число последовательности]
+		 */
+		function fib(n) {
+
+			if (n<=1) {
+				return n;
+			} else {
+				return fib(n-1)+fib(n-2);
+			}
+		}
+
+		let sequense = Number(parseInt(prompt(`Введите максимальный размер последовательности Фибоначи`)));
+
+		let sumFib = fib(sequense);
+		alert(sumFib);
+	</script>
+</body>
+</html>
