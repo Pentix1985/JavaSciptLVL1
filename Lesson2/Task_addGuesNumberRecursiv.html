@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task_recGuesNumber</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		/**
+		 * [genRandomNumber функция генерирует случайное число из диапазона]
+		 * @param  {[number]} min [минимальное число лиапазона]
+		 * @param  {[number]} max [максимальное число диапазона]
+		 * @return {[number]}     [число из диапазона]
+		 */
+		function genRandomNumber(min, max) {
+			let randomNumber = parseInt(((Math.random()*(max-min))+min), 10);
+			return randomNumber;
+		}
+
+		/**
+		 * [game Рекурсивная функция игры угадай число]
+		 * @param  {[number]} value [число которое надо угадать]
+		 * @return {[type]}       [description]
+		 */
+		function game(value) {
+
+			let answer = Number(parseInt(prompt(`Угадайте число`)));
+			if(value==answer) {
+				alert(`Вы угадали! Правильное число ${value}`);
+				return;
+			} else if (value > answer) {
+				alert(`Слишком маленькое число!`);
+			} else if (value < answer) {
+				alert(`Слишком большое число!`);
+			} else {
+				alert(`Введите число!`);
+			}
+			game(value);
+		}
+
+		do {
+			let minNumber = Number(parseInt(prompt(`Введите минимальное число диапазона`)));
+			let maxNumber = Number(parseInt(prompt(`Введите максимальное число диапазона`)));
+
+			let value = genRandomNumber(minNumber, maxNumber);
+
+			game(value);
+		} while(confirm(`Повторить?`));
+		
+	</script>
+</body>
+</html>
