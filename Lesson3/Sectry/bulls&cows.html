@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bulls&cows</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		function getRandomNumber() {
+			return parseInt(Math.random()*10);
+		}
+
+		function game(value) {
+			let number = [];
+			for (let i = 0; i < 4; i++) {
+				number.push(getRandomNumber())
+			}
+
+			
+		}
+
+		let answer = Number(parseInt(prompt(`Игра быки и коровы введите четыре(4) цифры!`)));
+
+		game(answer);
+
+
+	</script>
+</body>
+</html>

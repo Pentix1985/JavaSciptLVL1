@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MaleFemaleMap</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		const users = [
+			{	
+				name: 'Joe',
+				gender: 'male'
+			},
+			{
+				name: 'Jane',
+				gender: 'female'
+			},
+			{
+				name: 'Richard',
+				gender: 'male'
+			},
+			{
+				name: 'Elizabet',
+				gender: 'female'
+			}
+		];
+
+		const usersAppeal = users.map(function(user){
+			if (user.gender === 'male') {
+				return Object.assign({}, user, {appeal: 'Mr'});
+			}
+			return Object.assign({}, user, {appeal: 'Mrs'});
+		});
+
+		console.log(usersAppeal);
+	</script>
+</body>
+</html>

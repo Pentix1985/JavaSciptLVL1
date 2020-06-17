@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>similarValues</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		const arr1 = ['John', 'Avgur', 'Jane', 'Aslan', 'Robert', 'Elizabet'];
+		const arr2 = ['Izenbek', 'Matilda', 'John', 'Alesha', 'Jane', 'Froggy'];
+
+		// for (let i = 0; i < arr1.length; i++) {
+		// 	for (let j = 0; j < arr2.length; j++) {
+		// 		if (arr1[i] === arr2[j]) {
+		// 			arr3.push(arr1[i]);
+		// 		}
+		// 	}
+		// }
+		
+		const arr3 = arr1.filter(function(item) {
+			return arr2.includes(item);
+		});
+
+		console.log(arr3);
+	</script>
+</body>
+</html>

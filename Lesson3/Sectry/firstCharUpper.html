@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FirsCharUpper</title>
+</head>
+<body>
+
+	<script>
+		'use strict';
+
+		const str = 'Lorem ipsum dolor sit amet.';
+
+		let newStr = str.split(' ');
+
+		let upperChar = newStr.map(function(word) {
+			let letters = word.split('');
+			letters[0] = letters[0].toUpperCase();
+			return letters.join('');
+		});
+
+		upperChar = upperChar.join(' ');
+
+		console.log(upperChar);
+
+
+	</script>
+</body>
+</html>

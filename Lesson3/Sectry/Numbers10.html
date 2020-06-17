@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Numbers10</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		function getRandomNumber() {
+			return parseInt(Math.random()*(1000-0)+0)
+		}
+
+
+		let arr = [];
+		for (let i = 0; i < 5; i++) {
+			arr.push(getRandomNumber());
+		}
+		
+		alert(arr);
+
+		let arrTen = arr.map(value => value+10);
+
+		alert(arrTen);
+	</script>
+</body>
+</html>

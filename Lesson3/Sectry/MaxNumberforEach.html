@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MaxNumberforEach</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		function getRandomNumber() {
+			return parseInt(Math.random()*(1000-0)+0)
+		}
+
+
+		let arr = [];
+		for (let i = 0; i < 5; i++) {
+			arr.push(getRandomNumber());
+		}
+		
+		alert(arr);
+
+		let maxNumber = [0];
+
+		arr.forEach(function(value) {
+			if (value > maxNumber) {
+				maxNumber[0] = value;
+			}
+		});
+
+		console.log(maxNumber);
+
+		let sum = arr.reduce(function(accum, curr) {
+			return accum + curr;
+		});
+
+		alert(sum);
+	</script>
+</body>
+</html>
