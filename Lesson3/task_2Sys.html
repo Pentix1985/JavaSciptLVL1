@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task_2Sys</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		// Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров.
+		
+		const basket = [
+			{
+				id: 1,
+				name: "Game 1",
+				price: 110,
+				image: [
+					"1.jpg",
+					"2.jpg"
+				]
+			},
+
+			{
+				id: 2,
+				name: "Game 2",
+				price: 410,
+				image: [
+					"1.jpg",
+					"2.jpg"
+				]
+			},
+
+			{
+				id: 3,
+				name: "Game 3",
+				price: 810,
+				image: [
+					"1.jpg",
+					"2.jpg"
+				]
+			},
+
+			{
+				id: 4,
+				name: "Game 4",
+				price: 1110,
+				image: [
+					"1.jpg",
+					"2.jpg"
+				]
+			},
+		];
+
+		const countBasketPrice = function(item) {
+			let sum = 0;
+			for (let i = 0; i < item.length; i++) {
+				sum = sum + item[i].price;
+			}
+			return sum;
+		}
+
+		alert(countBasketPrice(basket));
+	</script>
+</body>
+</html>

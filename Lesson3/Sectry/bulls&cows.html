@@ -8,22 +8,64 @@
 	<script>
 		'use strict';
 
+		/**
+		 * [getRandomNumber Функция генерирует массив из случайных, неповторяющихся цифр]
+		 * @return {[string]} [возвращает массив из цифр в виде строк]
+		 */
 		function getRandomNumber() {
-			return parseInt(Math.random()*10);
+			let numArr = [];
+
+			while (numArr.length < 4) {
+				let num = String(parseInt(Math.random()*10));
+				if (numArr.length == 0) {
+					numArr.push(num);
+				}
+
+				if (!(numArr.includes(num))) {
+					numArr.push(num);
+				}
+			}
+			return numArr;
 		}
 
-		function game(value) {
-			let number = [];
-			for (let i = 0; i < 4; i++) {
-				number.push(getRandomNumber())
-			}
+		function game() {
+			let number = getRandomNumber();
 
+			while (true) {
+				let answer = prompt(`Игра быки и коровы введите четыре(4) цифры!`).split('');
+
+				let corrAnswer = answer.filter((item, idx) => {
+					if (idx === answer.indexOf(item)) {
+						return ' ';
+					}
+				});
+
+				let cowsCount = 0;
+				let bullsCount = 0;
+
+				if (corrAnswer.toString() === number.toString()) {
+					alert(`Вы победили!`);
+					break;
+				}
+
+				for (let i = 0; i < number.length; i++) {
+					for (let j = 0; j < corrAnswer.length; j++) {
+						if (number[i] === corrAnswer[j]) {
+							cowsCount++
+						}
+
+						if ((number[i] === corrAnswer[j]) && (i === j)) {
+							bullsCount++;
+						}
+					}
+				}
+				cowsCount = cowsCount - bullsCount;
+				alert(`Коровы: ${cowsCount}\nБыки: ${bullsCount}`);
+			}
 			
 		}
 
-		let answer = Number(parseInt(prompt(`Игра быки и коровы введите четыре(4) цифры!`)));
-
-		game(answer);
+		game();
 
 
 	</script>
