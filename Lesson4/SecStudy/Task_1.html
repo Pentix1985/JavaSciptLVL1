@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task_1</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		function getNumberToObject(num) {
+			if (isNaN(num)) {
+				console.log(`Вы ввели не число!`);
+				num = {};
+				return num;
+			}	
+
+			if (num < 0 || num > 999) {
+				console.log(`Вы ввели число не из диапазона (0-999)`);
+				num = {};
+				return num;
+			}
+
+			if (!(Number.isInteger(num))) {
+				console.log(`Вы ввели не целое число!`);
+				num = {};
+				return num;
+			}
+
+			return {
+				units: num % 10,
+				tens: (Math.floor(num / 10)) % 10,
+				hundereds: Math.floor(num / 100),
+			}
+		}
+
+		let number = +prompt(`Введтие целое число от 0 до 999`);
+
+		console.log(getNumberToObject(number));
+
+	
+	</script>
+</body>
+</html>
