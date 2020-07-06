@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		'use strict';
+
+		class User {
+			constructor(userName, age) {
+				this.name = userName;
+				this.age = age;
+			}
+
+			get fullName() {
+				return `${this.name} ${this.age}`;
+			}
+
+			set fullName(item) {
+				if (String(item.name)) {
+					this.name = item.name;
+				}
+
+				if (Number(item.age)) {
+					this.age = item.age;
+				}
+			}
+		}
+
+		let user1 = new User('Alex', 25);
+		console.log(user1.name);
+		console.log(user1.age);
+		console.log(user1.fullName);
+
+		user1.fullName = {name: 'Redic', age: 35};
+		console.log(user1.fullName);
+
+	</script>
+</body>
+</html>
